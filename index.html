@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人作品集 & 簡介 | Personal Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), #818cf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.3);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-card h3 {
+            font-size: 1rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 22px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+        }
+
+        .project-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            color: #fff;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .contact-btn {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .contact-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 個人頭像與主簡介 -->
+        <header>
+            <div class="profile-img">DEV</div>
+            <h1>你的名字 / Your Name</h1>
+            <p class="subtitle">資訊工程與軟體開發 | AI 自動化 & 系統開發</p>
+            <p class="bio">
+                熱衷於 Web 前端/後端開發、物聯網整合及 AI 自動化工具的開發者。擅長將技術落實於實際專案，解決真實生活中的挑戰。
+            </p>
+        </header>
+
+        <!-- 專業技能區域 -->
+        <section>
+            <h2 class="section-title">💡 專業技能 Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Web 開發</h3>
+                    <p>JavaScript, Vue.js, PHP, HTML5 / CSS3, Responsive Design</p>
+                </div>
+                <div class="skill-card">
+                    <h3>軟體與程式開發</h3>
+                    <p>Python, SQL 數據庫分析, RESTful API 串接</p>
+                </div>
+                <div class="skill-card">
+                    <h3>AI 與自動化</h3>
+                    <p>AI Agent 應用、工作流自動化、智慧硬體/IoT 系統整合</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 專案展示區域 -->
+        <section>
+            <h2 class="section-title">🚀 專案作品 Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>智慧感應與物聯網裝置</h3>
+                    <p>結合感測器與嵌入式系統開發的 Smart IoT 裝置，實現自動化偵測與數據回傳，優化日常生活與空間體驗。</p>
+                    <div class="tags">
+                        <span class="tag">IoT</span>
+                        <span class="tag">C/C++</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                    <a href="#" class="btn">查看詳情</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>動態 Web 應用與 API 整合</h3>
+                    <p>使用現代前端框架與後端 API 串接開發的互動式網站，提供順暢的使用者體驗與數據管理。</p>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">API Integration</span>
+                    </div>
+                    <a href="#" class="btn">查看詳情</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>AI 輔助工作流與自動化工具</h3>
+                    <p>運用 Python 與 AI API 打造的自動化腳本，幫助提升資料處理效率與自動化回應。</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">AI Tools</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                    <a href="#" class="btn">查看詳情</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 聯絡方式 -->
+        <section style="text-align: center;">
+            <h2 class="section-title" style="justify-content: center;">📫 聯絡我 Contact</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">歡迎交流、合作或是聊聊技術專案！</p>
+            <div class="contact-links">
+                <a href="https://github.com" target="_blank" class="contact-btn">GitHub</a>
+                <a href="mailto:your.email@example.com" class="contact-btn">Email Me</a>
+                <a href="#" class="contact-btn">LinkedIn</a>
+            </div>
+        </section>
+
+        <!-- 頁尾 -->
+        <footer>
+            <p>© 2026 Designed & Developed by You. Hosted on GitHub Pages.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
