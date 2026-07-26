@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人作品集 & 簡介 | Personal Portfolio</title>
+    <title>陳奕帆 | 個人作品集 & 簡介</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -13,6 +13,8 @@
             --accent-color: #38bdf8;
             --accent-hover: #0284c7;
             --border-color: #334155;
+            --ig-color: #e1306c;
+            --line-color: #00b900;
         }
 
         * {
@@ -40,18 +42,14 @@
         }
 
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-color), #818cf8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            font-weight: bold;
-            color: #fff;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
             margin: 0 auto 20px;
-            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.3);
+            display: block;
         }
 
         h1 {
@@ -191,12 +189,26 @@
             border-radius: 8px;
             text-decoration: none;
             font-size: 0.9rem;
+            font-weight: 500;
             transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .contact-btn:hover {
             border-color: var(--accent-color);
             color: var(--accent-color);
+        }
+
+        .contact-btn.ig:hover {
+            border-color: var(--ig-color);
+            color: var(--ig-color);
+        }
+
+        .contact-btn.line:hover {
+            border-color: var(--line-color);
+            color: var(--line-color);
         }
 
         footer {
@@ -214,8 +226,8 @@
     <div class="container">
         <!-- 個人頭像與主簡介 -->
         <header>
-            <div class="profile-img">DEV</div>
-            <h1>你的名字 / Your Name</h1>
+            <img src="profile.jpg" alt="陳奕帆" class="profile-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/140/38bdf8/ffffff?text=%E9%99%B3%E5%A5%95%E5%B8%86';">
+            <h1>陳奕帆</h1>
             <p class="subtitle">資訊工程與軟體開發 | AI 自動化 & 系統開發</p>
             <p class="bio">
                 熱衷於 Web 前端/後端開發、物聯網整合及 AI 自動化工具的開發者。擅長將技術落實於實際專案，解決真實生活中的挑戰。
@@ -285,17 +297,23 @@
         <!-- 聯絡方式 -->
         <section style="text-align: center;">
             <h2 class="section-title" style="justify-content: center;">📫 聯絡我 Contact</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 20px;">歡迎交流、合作或是聊聊技術專案！</p>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">歡迎交流、加好友或是聊聊技術專案！</p>
             <div class="contact-links">
-                <a href="https://github.com" target="_blank" class="contact-btn">GitHub</a>
-                <a href="mailto:your.email@example.com" class="contact-btn">Email Me</a>
-                <a href="#" class="contact-btn">LinkedIn</a>
+                <a href="https://www.instagram.com/ef_0222?igsh=MWxyZWlzeXl3aWIwNA%3D%3D&utm_source=qr" target="_blank" class="contact-btn ig">
+                    📸 Instagram
+                </a>
+                <a href="https://line.me/ti/p/VyiMFZU3rN" target="_blank" class="contact-btn line">
+                    💬 LINE 加好友
+                </a>
+                <a href="https://github.com" target="_blank" class="contact-btn">
+                    💻 GitHub
+                </a>
             </div>
         </section>
 
         <!-- 頁尾 -->
         <footer>
-            <p>© 2026 Designed & Developed by You. Hosted on GitHub Pages.</p>
+            <p>© 2026 Designed & Developed by 陳奕帆. Hosted on GitHub Pages.</p>
         </footer>
     </div>
 
